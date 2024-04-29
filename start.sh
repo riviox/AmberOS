@@ -1,0 +1,2 @@
+#!/bin/bash
+cosmos -b
