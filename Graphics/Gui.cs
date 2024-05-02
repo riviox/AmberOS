@@ -34,15 +34,6 @@ namespace amberos.Graphics
 			Move();
 			ProcessManager.Update();
 			MainCanvas.DrawFilledRectangle(Color.Black, 0, 1020, 100, 60);
-			MainCanvas.DrawString("Terminal", Gui.FontDefault,Color.White ,15, 1046);
-			if (MX >= 0 && MX <= 100 && MY >= 1020 && MY <= 1080 && !Clicked && MouseManager.MouseState == MouseState.Left)
-			{
-
-				Random rnd = new Random();
-				ProcessManager.Start(new Terminal { WindowData = new WindowData { WinPos = new Rectangle(rnd.Next(800, 1120), rnd.Next(0, 800), 800, 400) }, Name = "Terminal" });
-
-				Clicked = true;
-			}
 			MainCanvas.DrawImageAlpha(Cursor, (int)MouseManager.X, (int)MouseManager.Y);
 			if (MouseManager.MouseState == MouseState.Left)
 				Clicked = true;

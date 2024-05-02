@@ -165,6 +165,11 @@ namespace amberos.Apps
                     Gui.ShowFps = true;
                 }
             }
+            else if (currentCommand == "notepad")
+            {
+                Random rnd = new ();
+				ProcessManager.Start(new Notepad { WindowData = new WindowData { WinPos = new Rectangle(rnd.Next(800, 1120), rnd.Next(0, 800), 800, 400) }, Name = "Notepad" });
+            }
             else if (currentCommand == "ls")
             {
                 var dirs = Directory.GetDirectories(Kernel.Path);
